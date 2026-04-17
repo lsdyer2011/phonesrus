@@ -68,17 +68,20 @@
     align-items: center;
     justify-content: space-between;
     height: 64px;
+    gap: 12px;
   }
   .logo {
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: -0.02em;
+    flex-shrink: 0;
   }
   .logo span { color: var(--accent); }
 
   .nav-links { display: none; }
   .nav-cta {
+    display: none;
     background: var(--ink);
     color: var(--bg);
     padding: 9px 16px;
@@ -86,6 +89,7 @@
     font-size: 14px;
     font-weight: 500;
     transition: transform 0.2s, background 0.2s;
+    flex-shrink: 0;
   }
   .nav-cta:hover { transform: translateY(-1px); background: var(--accent); }
 
@@ -598,6 +602,7 @@
   @media (min-width: 768px) {
     .container { padding: 0 32px; }
     .menu-btn { display: none; }
+    .nav-cta { display: inline-flex; align-items: center; }
     .nav-links {
       display: flex;
       gap: 32px;
@@ -677,6 +682,7 @@
     <a href="#why">Why Us</a>
     <a href="#reviews">Reviews</a>
     <a href="#visit">Visit</a>
+    <a href="tel:+18135551234" style="color: var(--accent); font-weight: 600;">Call (813) 555-1234</a>
   </div>
 </nav>
 
