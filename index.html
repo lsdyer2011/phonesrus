@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phones R Us Tech Repair — Tampa Phone, Tablet & Laptop Repair</title>
+<meta name="description" content="Fast, reliable phone, tablet, and laptop repair in Tampa, FL. iPhone & Samsung screen replacement, batteries, water damage, and more. 4.6★ on Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --ink: #0e0e0c;
+    --ink-soft: #4a4a45;
+    --ink-muted: #8a8a82;
+    --line: #e8e6df;
+    --accent: #2f5d3d;
+    --accent-soft: #eaf1ec;
+    --radius: 14px;
+    --maxw: 1180px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  .container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 250, 247, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .logo span { color: var(--accent); }
+
+  .nav-links { display: none; }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .nav-cta:hover { transform: translateY(-1px); background: var(--accent); }
+
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    margin-right: -8px;
+  }
+  .menu-btn span {
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .menu-btn.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+  .menu-btn.open span:nth-child(2) { opacity: 0; }
+  .menu-btn.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+  .mobile-menu {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 20px;
+    transform: translateY(-110%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 99;
+  }
+  .mobile-menu.open { transform: translateY(0); }
+  .mobile-menu a {
+    display: block;
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile-menu a:last-of-type { border-bottom: none; }
+
+  /* HERO */
+  .hero {
+    padding: 48px 0 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--ink-soft);
+  }
+  h1.hero-title {
+    font-size: clamp(38px, 9vw, 68px);
+    margin-bottom: 20px;
+  }
+  h1.hero-title em {
+    font-style: normal;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin-bottom: 32px;
+  }
+  .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+  .btn-secondary {
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    padding: 15px 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { background: var(--ink); color: var(--bg); }
+
+  .rating-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .stars { color: #f5a623; letter-spacing: 2px; font-size: 16px; }
+  .rating-text { font-size: 14px; color: var(--ink-soft); }
+  .rating-text strong { color: var(--ink); font-weight: 500; }
+
+  .hero-image {
+    margin-top: 48px;
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8e6df 0%, #d4d2cb 100%);
+  }
+  .placeholder-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    font-size: 13px;
+    text-align: center;
+    padding: 20px;
+    background-image:
+      linear-gradient(135deg, transparent 49%, rgba(0,0,0,0.04) 50%, transparent 51%),
+      linear-gradient(45deg, transparent 49%, rgba(0,0,0,0.04) 50%, transparent 51%);
+  }
+  .hero-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--bg);
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-badge-dot {
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+  }
+  .hero-badge-text { font-size: 13px; line-height: 1.3; }
+  .hero-badge-text strong { display: block; font-weight: 500; }
+  .hero-badge-text span { color: var(--ink-muted); font-size: 12px; }
+
+  /* SECTIONS */
+  section { padding: 64px 0; }
+  .section-header { margin-bottom: 40px; }
+  .section-header h2 {
+    font-size: clamp(30px, 6vw, 44px);
+    margin-bottom: 12px;
+  }
+  .section-header h2 em { font-style: normal; color: var(--accent); font-weight: 600; }
+  .section-header p {
+    color: var(--ink-soft);
+    max-width: 560px;
+    font-size: 16px;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--ink);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--accent);
+  }
+  .service-icon svg { width: 22px; height: 22px; }
+  .service-card h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  .service-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .service-price span { color: var(--ink-muted); font-size: 13px; font-weight: 400; }
+
+  /* WHY US */
+  .why {
+    background: var(--accent-soft);
+    color: var(--ink);
+    border-radius: 24px;
+    margin: 0 20px;
+    padding: 56px 28px;
+  }
+  .why .container { padding: 0; }
+  .why h2 { color: var(--ink); }
+  .why h2 em { color: var(--accent); font-style: normal; font-weight: 600; }
+  .why .section-header p { color: var(--ink-soft); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .why-item {
+    border-top: 1px solid rgba(47, 93, 61, 0.18);
+    padding-top: 24px;
+  }
+  .why-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .why-item h3 {
+    color: var(--ink);
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .why-item p {
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  /* PROCESS */
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .step h4 { font-size: 20px; margin-bottom: 6px; }
+  .step p { font-size: 14px; color: var(--ink-soft); }
+
+  /* REVIEWS */
+  .reviews-summary {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .review-score {
+    font-family: 'Inter', sans-serif;
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+  .review-score em { font-style: normal; color: var(--accent); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .review {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .review-stars { color: #f5a623; margin-bottom: 12px; letter-spacing: 2px; }
+  .review p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .review-avatar {
+    width: 36px;
+    height: 36px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+  .review-author strong { font-weight: 500; display: block; }
+  .review-author span { color: var(--ink-muted); font-size: 12px; }
+
+  /* VISIT */
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .visit-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .visit-card h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .visit-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .visit-info:first-of-type { border-top: none; padding-top: 0; }
+  .visit-info-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .visit-info-icon svg { width: 18px; height: 18px; }
+  .visit-info-text strong { display: block; font-weight: 500; margin-bottom: 2px; }
+  .visit-info-text span { color: var(--ink-soft); font-size: 14px; }
+  .visit-info-text a { color: var(--ink-soft); transition: color 0.2s; }
+  .visit-info-text a:hover { color: var(--accent); }
+
+  .copy-btn {
+    background: none;
+    border: 1px solid var(--line);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-left: 8px;
+    transition: background 0.2s;
+  }
+  .copy-btn:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent-soft); }
+  .copy-btn.copied { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .hours-row:first-of-type { border-top: none; }
+  .hours-row span:first-child { color: var(--ink-soft); }
+  .hours-row.today { color: var(--accent); font-weight: 500; }
+  .hours-row.today span:first-child { color: var(--accent); }
+
+  .map-wrap {
+    aspect-ratio: 16/10;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .map-wrap iframe { width: 100%; height: 100%; border: 0; }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: var(--accent-soft);
+    color: var(--ink);
+    border-radius: var(--radius);
+    padding: 40px 28px;
+    text-align: center;
+  }
+  .cta-banner h2 {
+    color: var(--ink);
+    font-size: clamp(28px, 6vw, 38px);
+    margin-bottom: 12px;
+  }
+  .cta-banner h2 em { font-style: normal; color: var(--accent); font-weight: 600; }
+  .cta-banner p {
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+  .cta-banner .btn-primary { background: var(--ink); color: var(--bg); }
+  .cta-banner .btn-primary:hover { background: var(--accent); color: var(--bg); }
+
+  /* FOOTER */
+  footer {
+    padding: 48px 0 28px;
+    border-top: 1px solid var(--line);
+    margin-top: 48px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+  }
+  .footer-col a, .footer-col p {
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--accent); }
+  .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--ink-muted);
+    text-align: center;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 768px) {
+    .container { padding: 0 32px; }
+    .menu-btn { display: none; }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--ink-soft);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .mobile-menu { display: none; }
+
+    .hero { padding: 80px 0 100px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-image { margin-top: 0; }
+
+    section { padding: 100px 0; }
+    .why { margin: 0 32px; padding: 80px; border-radius: 32px; }
+
+    .services-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 60px; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 24px 40px; }
+    .step { border-bottom: none; padding: 0; }
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .visit-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+  }
+
+  @media (min-width: 1024px) {
+    .reviews-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      padding: 32px 40px;
+    }
+    .review-score { margin-bottom: 0; }
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">Phones <span>R Us</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="tel:+18135551234" class="nav-cta">Call now</a>
+    <button class="menu-btn" aria-label="Menu" id="menuBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#visit">Visit</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Tampa, Florida</div>
+        <h1 class="hero-title">Cracked screen?<br><em>Fixed today.</em></h1>
+        <p class="hero-sub">Same-day repair for iPhones, Samsungs, iPads, and laptops — done by techs who actually know their stuff. No appointment needed.</p>
+        <div class="hero-cta-row">
+          <a href="tel:+18135551234" class="btn-primary">Get a free quote →</a>
+          <a href="#services" class="btn-secondary">See services</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="placeholder-img">[ Hero image: technician repairing phone at workbench ]</div>
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          <div class="hero-badge-text">
+            <strong>Open now</strong>
+            <span>Walk-ins welcome</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">What we fix</div>
+      <h2>Repairs done <em>right</em>, the first time.</h2>
+      <p>From shattered screens to dead batteries, we handle every major brand and most repairs while you wait.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+        </div>
+        <h3>Screen Repair</h3>
+        <p>iPhone, Samsung, Pixel — most fixed in under an hour with quality parts.</p>
+        <div class="service-price">From $79 <span>· 30–60 min</span></div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg>
+        </div>
+        <h3>Battery Replacement</h3>
+        <p>Phone dying by lunch? Get a fresh battery and your day back.</p>
+        <div class="service-price">From $59 <span>· 30 min</span></div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 7-6 11a6 6 0 0012 0c0-4-3-7-6-11z"/></svg>
+        </div>
+        <h3>Water Damage</h3>
+        <p>Free diagnostic. We've saved phones from pools, toilets, and worse.</p>
+        <div class="service-price">From $49 <span>· diagnostic free</span></div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+        </div>
+        <h3>Laptop Repair</h3>
+        <p>MacBooks, PCs, Chromebooks — keyboards, screens, charging ports.</p>
+        <div class="service-price">From $89 <span>· 1–3 days</span></div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+        </div>
+        <h3>Tablet & iPad</h3>
+        <p>Cracked glass, LCD, charge ports, buttons. All iPad models supported.</p>
+        <div class="service-price">From $99 <span>· same-day</span></div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M2 12h4m12 0h4M5 5l3 3m8 8l3 3M5 19l3-3m8-8l3-3"/></svg>
+        </div>
+        <h3>Unlocking & More</h3>
+        <p>Carrier unlocks, data recovery, software issues, accessory sales.</p>
+        <div class="service-price">From $25 <span>· varies</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" style="padding-top: 0;">
+  <div class="why">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="eyebrow">Why locals choose us</div>
+        <h2>Tampa's most <em>trusted</em> repair shop.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item fade-up">
+          <span class="why-num">— 01</span>
+          <h3>90-day warranty</h3>
+          <p>Every repair backed in writing. Something off? Bring it back.</p>
+        </div>
+        <div class="why-item fade-up">
+          <span class="why-num">— 02</span>
+          <h3>While-you-wait service</h3>
+          <p>Most fixes done in under an hour. Coffee shop next door.</p>
+        </div>
+        <div class="why-item fade-up">
+          <span class="why-num">— 03</span>
+          <h3>Honest pricing</h3>
+          <p>Free diagnostics. Upfront quotes. No surprises at pickup.</p>
+        </div>
+        <div class="why-item fade-up">
+          <span class="why-num">— 04</span>
+          <h3>10+ years in Tampa</h3>
+          <p>Locally owned and operated. Real techs, not a franchise script.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">How it works</div>
+      <h2>Drop off, relax, <em>pick up.</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="step fade-up">
+        <div class="step-num">1</div>
+        <div>
+          <h4>Get a quote</h4>
+          <p>Call or text us with your device — we'll give you an honest price in minutes.</p>
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">2</div>
+        <div>
+          <h4>Bring it in</h4>
+          <p>Walk in anytime during business hours. No appointments needed.</p>
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">3</div>
+        <div>
+          <h4>We fix it</h4>
+          <p>Most repairs done in 30–60 minutes. Grab a coffee, we'll text you.</p>
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">4</div>
+        <div>
+          <h4>Pick it up</h4>
+          <p>Tested, cleaned, and warrantied. You're back in business.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Reviews</div>
+      <h2>What Tampa is <em>saying.</em></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p>"Fixed my iPhone screen in 40 minutes. Honest price, super friendly. Definitely my new go-to repair spot in Tampa."</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div><strong>Marcus J.</strong><span>2 weeks ago</span></div>
+        </div>
+      </div>
+      <div class="review fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p>"Brought in a water-damaged Galaxy I thought was dead. They saved it and all my photos. Lifesavers."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div><strong>Sofia R.</strong><span>1 month ago</span></div>
+        </div>
+      </div>
+      <div class="review fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p>"Quick, professional, and way cheaper than the Apple Store quoted me. They earned a customer for life."</p>
+        <div class="review-author">
+          <div class="review-avatar">D</div>
+          <div><strong>David K.</strong><span>3 weeks ago</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Find us</div>
+      <h2>Come say <em>hi.</em></h2>
+      <p>Located on N Florida Ave. Free parking, walk-ins always welcome.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card fade-up">
+        <h3>Contact & location</h3>
+        <div class="visit-info">
+          <div class="visit-info-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="visit-info-text">
+            <strong>Address</strong>
+            <span>7301 N Florida Ave<br>Tampa, FL 33604</span>
+            <button class="copy-btn" data-copy="7301 N Florida Ave, Tampa, FL 33604">Copy</button>
+          </div>
+        </div>
+        <div class="visit-info">
+          <div class="visit-info-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="visit-info-text">
+            <strong>Phone</strong>
+            <a href="tel:+18135551234">(813) 555-1234</a>
+            <button class="copy-btn" data-copy="(813) 555-1234">Copy</button>
+          </div>
+        </div>
+        <div class="visit-info">
+          <div class="visit-info-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="visit-info-text">
+            <strong>Email</strong>
+            <a href="mailto:hello@phonesrustampa.com">hello@phonesrustampa.com</a>
+            <button class="copy-btn" data-copy="hello@phonesrustampa.com">Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="visit-card fade-up">
+        <h3>Hours</h3>
+        <div class="hours-row"><span>Monday</span><span>10am – 7pm</span></div>
+        <div class="hours-row"><span>Tuesday</span><span>10am – 7pm</span></div>
+        <div class="hours-row"><span>Wednesday</span><span>10am – 7pm</span></div>
+        <div class="hours-row today"><span>Thursday — Today</span><span>10am – 7pm</span></div>
+        <div class="hours-row"><span>Friday</span><span>10am – 7pm</span></div>
+        <div class="hours-row"><span>Saturday</span><span>10am – 6pm</span></div>
+        <div class="hours-row"><span>Sunday</span><span>12pm – 5pm</span></div>
+      </div>
+    </div>
+    <div style="margin-top: 24px;" class="fade-up">
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps?q=7301+N+Florida+Ave,+Tampa,+FL+33604&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="cta-banner fade-up">
+      <h2>Ready to <em>fix it?</em></h2>
+      <p>Free quotes. Same-day service. 90-day warranty.</p>
+      <a href="tel:+18135551234" class="btn-primary">Call (813) 555-1234</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="logo" style="margin-bottom: 12px;">Phones <span>R Us</span></div>
+        <p style="font-size: 14px; max-width: 320px;">Tampa's trusted phone, tablet, and laptop repair shop. Locally owned since 2014.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Screen repair</a>
+        <a href="#services">Battery replacement</a>
+        <a href="#services">Water damage</a>
+        <a href="#services">Laptop repair</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#why">Why us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Location</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+18135551234">(813) 555-1234</a>
+        <a href="mailto:hello@phonesrustampa.com">hello@phonesrustampa.com</a>
+        <p>7301 N Florida Ave<br>Tampa, FL 33604</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Phones R Us Tech Repair. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy);
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.classList.remove('copied');
+        }, 1600);
+      } catch(e) {}
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
